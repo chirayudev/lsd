@@ -29,13 +29,13 @@ function BuildABruh() {
   const [mapArray, setMapArray] = useState([])
   const [showPopup, setShowPopup] = useState(false)
   const [imgCollection, setImgCollection] = useState([
-    { uri: `/new/Races/Zombie.png`,order:  1,value:1 },
-    { uri: `/new/Bosstumes/None.png`,order:2,value:1 },
-    { uri: `/new/Gaze/Boggly.png`,order:3,value:1 },
-    { uri: `/new/EyePieces/None.png`,order:4,value:1 },
-    { uri: `/new/Funk/None.png`,order:5,value:1 },
-    { uri: `/new/Smiles/Cigar.png`,order:6,value:1 },
-    { uri: `/new/Headwears/None.png`,order:7,value:1 },
+    { uri: `/assets/Races/Zombie.png`,order:  1,value:1 },
+    { uri: `/assets/Bosstumes/None.png`,order:2,value:1 },
+    { uri: `/assets/Gaze/Boggly.png`,order:3,value:1 },
+    { uri: `/assets/EyePieces/None.png`,order:4,value:1 },
+    { uri: `/assets/Funk/None.png`,order:5,value:1 },
+    { uri: `/assets/Smiles/Cigar.png`,order:6,value:1 },
+    { uri: `/assets/Headwears/None.png`,order:7,value:1 },
   ]);
 
   console.log(imgCollection, "imgCollection");
@@ -158,14 +158,14 @@ console.log(options,"options");
   function RandomFunc() {
 
     
-    updateFieldChanged(`/new/Races/${bodyArr[bodyNum]}.png`,bodyArr[bodyNum], 0);
+    updateFieldChanged(`/assets/Races/${bodyArr[bodyNum]}.png`,bodyArr[bodyNum], 0);
     
-    updateFieldChanged(`/new/Bosstumes/${costumesArr[ClothesNum]}.png`,costumesArr[ClothesNum],1);
-    updateFieldChanged(`/new/Gaze/${EyeArr[EyeNum]}.png`, EyeArr[EyeNum],2);
-    updateFieldChanged(`/new/EyePieces/${GlassesArr[GlassesNum]}.png`,GlassesArr[GlassesNum],3);
-    updateFieldChanged(`/new/Funk/${NeckArr[NeckNum]}.png`,NeckArr[NeckNum], 4);
-    updateFieldChanged(`/new/Smiles/${SmilesArr[SmileNum]}.png`,SmilesArr[SmileNum], 5);
-    updateFieldChanged(`/new/Headwears/${HeadArr[HeadNum]}.png`,HeadArr[HeadNum],6);
+    updateFieldChanged(`/assets/Bosstumes/${costumesArr[ClothesNum]}.png`,costumesArr[ClothesNum],1);
+    updateFieldChanged(`/assets/Gaze/${EyeArr[EyeNum]}.png`, EyeArr[EyeNum],2);
+    updateFieldChanged(`/assets/EyePieces/${GlassesArr[GlassesNum]}.png`,GlassesArr[GlassesNum],3);
+    updateFieldChanged(`/assets/Funk/${NeckArr[NeckNum]}.png`,NeckArr[NeckNum], 4);
+    updateFieldChanged(`/assets/Smiles/${SmilesArr[SmileNum]}.png`,SmilesArr[SmileNum], 5);
+    updateFieldChanged(`/assets/Headwears/${HeadArr[HeadNum]}.png`,HeadArr[HeadNum],6);
     setRandomRefresh(randomRefresh + 1)
   }
 
@@ -240,7 +240,7 @@ console.log(options,"options");
               value={imgCollection[0].value}
                 onChange={(e) => {
                   // setBody(e.target.value);
-                  updateFieldChanged(`/new/Races/${e.target.value}.png`,e.target.value, 0);
+                  updateFieldChanged(`/assets/Races/${e.target.value}.png`,e.target.value, 0);
                   setOnlyBg(true);
                   setManualRefresh(manualRefresh + 1)
                 }}
@@ -261,7 +261,7 @@ console.log(options,"options");
               value={imgCollection[1].value}
                 onChange={(e) => {
                   updateFieldChanged(
-                    `/new/Bosstumes/${e.target.value}.png`,
+                    `/assets/Bosstumes/${e.target.value}.png`,
                     e.target.value,
                     1
                   );
@@ -284,7 +284,7 @@ console.log(options,"options");
               value={imgCollection[6].value}
                 onChange={(e) => {
                   updateFieldChanged(
-                    `/new/Headwears/${e.target.value}.png`,
+                    `/assets/Headwears/${e.target.value}.png`,
                     e.target.value,
                     6
                   );
@@ -305,7 +305,7 @@ console.log(options,"options");
               <Form.Select
               value={imgCollection[2].value}
                 onChange={(e) => {
-                  updateFieldChanged(`/new/Gaze/${e.target.value}.png`,e.target.value, 2);
+                  updateFieldChanged(`/assets/Gaze/${e.target.value}.png`,e.target.value, 2);
                   setManualRefresh(manualRefresh + 1)
                 }}
               >
@@ -325,7 +325,7 @@ console.log(options,"options");
               value={imgCollection[3].value}
                 onChange={(e) => {
                   updateFieldChanged(
-                    `/new/EyePieces/${e.target.value}.png`,
+                    `/assets/EyePieces/${e.target.value}.png`,
                     e.target.value,
                     3
                   );
@@ -346,7 +346,7 @@ console.log(options,"options");
               <Form.Select
               value={imgCollection[5].value}
                 onChange={(e) => {
-                  updateFieldChanged(`/new/Smiles/${e.target.value}.png`,e.target.value, 5);
+                  updateFieldChanged(`/assets/Smiles/${e.target.value}.png`,e.target.value, 5);
                   setManualRefresh(manualRefresh + 1)
                 }}
               >
@@ -365,7 +365,7 @@ console.log(options,"options");
               <Form.Select
               value={imgCollection[4].value}
                 onChange={(e) => {
-                  updateFieldChanged(`/new/Funk/${e.target.value}.png`,e.target.value, 4);
+                  updateFieldChanged(`/assets/Funk/${e.target.value}.png`,e.target.value, 4);
                   setManualRefresh(manualRefresh + 1)
                 }}
               >
@@ -383,7 +383,7 @@ console.log(options,"options");
         </div>
 
         <div>
-          <button onClick={() => setShowPopup(true) } className={styles.button} >Download </button>
+          <button onClick={DownloadImage} className={styles.button} >Download </button>
         </div>
       </div>
     </div>
